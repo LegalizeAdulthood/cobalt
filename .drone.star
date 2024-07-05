@@ -205,12 +205,12 @@ def main(ctx):
         linux("gcc-13 (io_context)",    branch, "docker.io/library/gcc:13",  variant="release", cxxstd="20", **{'boost.cobalt.executor': 'use_io_context'}),
         linux("gcc-13 (container.pmr)", branch, "docker.io/library/gcc:13",  variant="release", cxxstd="20", **{'boost.cobalt.pmr': 'boost-container'}),
         linux("gcc-13 (no pmr)",        branch, "docker.io/library/gcc:13",  variant="release", cxxstd="20", **{'boost.cobalt.pmr': 'no'}),
-        linux("clang",                  branch, "docker.io/silkeh/clang", toolset='clang', variant="release", cxxstd="20"),
-        linux("clang (container.pmr)",  branch, "docker.io/silkeh/clang", toolset='clang', variant="release", cxxstd="20", **{'boost.cobalt.pmr': 'boost-container'}),
-        linux("clang (no pmr)",         branch, "docker.io/silkeh/clang", toolset='clang', variant="release", cxxstd="20", **{'boost.cobalt.pmr': 'no'}),
-        linux("clang (asan)",           branch, "docker.io/silkeh/clang", toolset='clang', variant="release", cxxstd="20", debug_symbols="on", address_sanitizer="on"),
-        linux("clang (usan)",           branch, "docker.io/silkeh/clang", toolset='clang', variant="release", cxxstd="20", debug_symbols="on", undefined_sanitizer="on"),
-        linux("clang (tsan)",           branch, "docker.io/silkeh/clang", toolset='clang', variant="release", cxxstd="20", debug_symbols="on",  thread_sanitizer="on"),
+        linux("clang",                  branch, "cppalliance/droneubuntu2404:1", toolset='clang', variant="release", cxxstd="20"),
+        linux("clang (container.pmr)",  branch, "cppalliance/droneubuntu2404:1", toolset='clang', variant="release", cxxstd="20", **{'boost.cobalt.pmr': 'boost-container'}),
+        linux("clang (no pmr)",         branch, "cppalliance/droneubuntu2404:1", toolset='clang', variant="release", cxxstd="20", **{'boost.cobalt.pmr': 'no'}),
+        linux("clang (asan)",           branch, "cppalliance/droneubuntu2404:1", toolset='clang', variant="release", cxxstd="20", debug_symbols="on",  address_sanitizer="on"),
+        linux("clang (usan)",           branch, "cppalliance/droneubuntu2404:1", toolset='clang', variant="release", cxxstd="20", debug_symbols="on",  undefined_sanitizer="on"),
+        linux("clang (tsan)",           branch, "cppalliance/droneubuntu2404:1", toolset='clang', variant="release", cxxstd="20", debug_symbols="on",  thread_sanitizer="on"),
         windows("msvc-14.3 (x64)",      branch, "cppalliance/dronevs2022:latest", variant="release", cxxstd="20", address_model="64"),
         windows("msvc-14.3 (x32)",      branch, "cppalliance/dronevs2022:latest", variant="release", cxxstd="20", address_model="32")
     ]
