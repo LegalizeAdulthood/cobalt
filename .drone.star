@@ -114,7 +114,9 @@ def linux_build_steps(image, **kwargs):
         {
             "name": "test",
             "image": image,
+            "privileged" : True,
             "commands" : [
+                "echo 0 | sudo tee /proc/sys/kernel/randomize_va_space",
                 "cd boost/libs/cobalt",
                 "../../b2 test -j8 " + args
             ]
